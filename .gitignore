@@ -4,5 +4,4 @@ node_modules
 yarn-debug.log*
 yarn-error.log*
 
-/dist
 /__tests__/**/*/dist

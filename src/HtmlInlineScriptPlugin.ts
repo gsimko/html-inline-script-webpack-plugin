@@ -89,7 +89,7 @@ class HtmlInlineScriptPlugin implements WebpackPluginInstance {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { src, ...attributesWithoutSrc } = tag.attributes;
+    const { src, defer, ...attributesWithoutSrcDefer } = tag.attributes;
     this.processedScriptFiles.push(scriptName);
 
     return {
@@ -97,7 +97,7 @@ class HtmlInlineScriptPlugin implements WebpackPluginInstance {
       // escape '</script>' appears in source
       innerHTML: (asset.source() as string).replace(/(<)(\/script>)/g, '\\x3C$2'),
       voidTag: false,
-      attributes: attributesWithoutSrc,
+      attributes: attributesWithoutSrcDefer,
       meta: { plugin: 'html-inline-script-webpack-plugin' }
     };
   }
