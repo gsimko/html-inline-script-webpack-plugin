@@ -6,7 +6,6 @@
   "scripts": {
     "build": "rm -rf ./dist && tsc --build --force --verbose",
     "lint": "eslint --ext .ts,js src",
-    "prepare": "husky install && install-peers",
     "first-release": "npx standard-version --commit-all --tag-prefix v --first-release",
     "release": "npx standard-version --commit-all --tag-prefix v",
     "test": "jest --verbose --watchAll --config ./jest.config.js --silent",
